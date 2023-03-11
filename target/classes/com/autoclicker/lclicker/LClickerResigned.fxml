@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.autoclicker.lclicker.LClickerController">
+  <children>
+    <MenuBar prefWidth="339.0" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <TitledPane alignment="CENTER" collapsible="false" prefHeight="10.0" prefWidth="200.0" text="Click Interval">
+         <content>
+            <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="80.0" prefWidth="438.0" spacing="5.0">
+               <children>
+                  <Label text="Hours:" />
+                  <TextField fx:id="hourTextField" prefHeight="25.0" prefWidth="50.0" />
+                  <Label text="Minutes:" />
+                  <TextField fx:id="minTextField" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="50.0" />
+                  <Label text="Seconds:" />
+                  <TextField fx:id="secondTextField" minWidth="-Infinity" prefHeight="25.0" prefWidth="50.0" />
+                  <Label text="Millisec:" />
+                  <TextField fx:id="millisecTextField" minWidth="-Infinity" prefHeight="25.0" prefWidth="50.0" />
+               </children>
+            </HBox>
+         </content>
+      </TitledPane>
+      <TitledPane alignment="CENTER" collapsible="false" prefHeight="10.0" prefWidth="200.0" text="Cursor Position">
+         <content>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <RadioButton fx:id="cLButton" mnemonicParsing="false" onAction="#cLOnSelected" selected="true" text="Current Location">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Location" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="sLButton" mnemonicParsing="false" onAction="#sLOnSelected" text="Select Location" toggleGroup="$Location" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="150.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="X:" visible="false" fx:id="x_Label" />
+                        <TextField prefWidth="50.0" visible="false" fx:id="x_Field">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Text fx:id="y_Label" strokeType="OUTSIDE" strokeWidth="0.0" text="Y:" visible="false" />
+                        <TextField fx:id="y_Field" prefWidth="50.0" visible="false">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </content>
+      </TitledPane>
+      <HBox alignment="CENTER" prefHeight="320.0" prefWidth="440.0">
+         <children>
+            <TitledPane alignment="CENTER" collapsible="false" prefHeight="200.0" prefWidth="220.0" text="Mouse Options">
+               <content>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Mouse Button:" />
+                        <ChoiceBox fx:id="mouseButtonChoiceBox" prefHeight="20.0" prefWidth="60.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </ChoiceBox>
+                        <Label text="Single/Double:" />
+                        <ChoiceBox fx:id="singleDoubChoiceBox" prefHeight="26.0" prefWidth="60.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </ChoiceBox>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane alignment="CENTER" collapsible="false" prefHeight="200.0" prefWidth="220.0" text="Repeats/Time">
+               <content>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                     <children>
+                        <RadioButton fx:id="RuntilStoppedRadioButton" mnemonicParsing="false" onAction="#RuntilStoppedRadioButtonClicked" selected="true" text="Repeat Until Stopped">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="repeats" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <HBox prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <RadioButton fx:id="timeLimitRadioButton" mnemonicParsing="false" onAction="#timeLimitRadioButtonClicked" text="Time Limit(min):" toggleGroup="$repeats" />
+                              <Spinner fx:id="timeLimitSpinner" amountToStepBy="1" editable="true" initialValue="1" max="60" min="0" prefWidth="60.0" visible="false">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Spinner>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <RadioButton fx:id="numRepeatsRadioButton" mnemonicParsing="false" onAction="#numOfTimesRadioButtonClicked" text="Number of Times:" toggleGroup="$repeats" />
+                              <Spinner fx:id="numOfTimesSpinner" amountToStepBy="1" editable="true" initialValue="1" max="5000" min="0" prefWidth="60.0" visible="false">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Spinner>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content></TitledPane>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="440.0" spacing="30.0">
+         <children>
+            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#hotKeyButtonClicked" prefHeight="35.0" prefWidth="190.0" text="HotKeys" />
+            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#settingsButtonClicked" prefHeight="35.0" prefWidth="190.0" text="Settings">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="35.0" prefWidth="440.0" spacing="30.0">
+         <children>
+            <Button fx:id="startButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#startButtonClicked" prefHeight="35.0" prefWidth="190.0" text="Start/F1">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="endButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#endButtonClicked" prefHeight="35.0" prefWidth="190.0" text="End/F3">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+  </children>
+</VBox>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="122.0" prefWidth="260.0" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.autoclicker.lclicker.HotKeyWindowController">
+   <children>
+      <Button fx:id="stopHotKeyButton" mnemonicParsing="false" onMouseClicked="#stopHotKeyButtonClicked" prefHeight="80.0" prefWidth="160.0" text="Stop Hotkey" />
+      <Label fx:id="stopHotKeyLabel" text="Stop HotKey: F3" />
+      <Button fx:id="startHotKeyButton" mnemonicParsing="false" onMouseClicked="#startHotKeyButtonClicked" prefHeight="80.0" prefWidth="160.0" text="Start Hotkey" />
+      <Label fx:id="startHotKeyLabel" text="Start Hotkey: F1" />
+   </children>
+</VBox>
