@@ -1,7 +1,7 @@
 # LostClicker
 To do list
 - Have a working executable file
-- Rewrite documentation
+- Rewrite comments
 
 LostClicker was my first project I did for fun using javafx, and it was a extremely fun project. Feel free to roast my awful code :>
 
