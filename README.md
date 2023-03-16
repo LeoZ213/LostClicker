@@ -1,5 +1,6 @@
 # LostClicker
 UPDATE: Still haven't figured out how to export as a working executable file...
+
 LostClicker was my first project I did for fun using javafx, and it was a extremely fun project. Feel free to roast my awful code :>
 
 <img src="https://user-images.githubusercontent.com/113804442/224515575-01fece93-b43d-41c6-bc2c-57c096cf8bed.png" width=400 />
