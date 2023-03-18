@@ -98,6 +98,7 @@ public class LClickerController {
             HOTKEYWINDOW.setScene(new Scene(root));
             HOTKEYWINDOW.setTitle("HotKey Settings");
             HOTKEYWINDOW.setResizable(false);
+            HOTKEYWINDOW.getIcons().add(new Image("https://tinyurl.com/bdh4rax7"));
             HOTKEYWINDOW.show();
         } else if (HOTKEYWINDOW.isShowing()) {
             HOTKEYWINDOW.toFront();
@@ -118,7 +119,7 @@ public class LClickerController {
             HELPWINDOW = new Stage();
             HELPWINDOW.setScene(new Scene(root));
             HELPWINDOW.setTitle("Help Window");
-            HELPWINDOW.getIcons().add(new Image("C:\\Users\\lzhan\\OneDrive\\Documents\\Random Coding projects\\LClicker\\src\\main\\resources\\Images\\screwdriver.png"));
+            HELPWINDOW.getIcons().add(new Image("https://tinyurl.com/2p9b6mwy"));
             HELPWINDOW.setResizable(false);
             HELPWINDOW.show();
         } else if (HELPWINDOW.isShowing()) {
