@@ -16,6 +16,11 @@ public class HotKeyWindowController {
     @FXML
     private Button startHotKeyButton;
 
+    /**
+     * Handles the click event of the button for stop hotkey in the hotkey window
+     * Changes the value of the controller's end button text based on the KeyPressed event
+     * Removes the keyPressed event handler from the stage
+     */
     @FXML
     public void stopHotKeyButtonClicked() {
         Stage stage = (Stage) stopHotKeyButton.getScene().getWindow();
@@ -34,16 +39,24 @@ public class HotKeyWindowController {
         });
     }
 
+    /**
+     * Handles the click event of the button for start hotkey in the hotkey window
+     * Changes the value of the controller's start button text based on the KeyPressed event
+     * Removes the keyPressed event handler from the stage
+     */
     public void startHotKeyButtonClicked() {
-        startHotKeyLabel.setText("Waiting for Input");
         Stage stage = (Stage) startHotKeyButton.getScene().getWindow();
+        startHotKeyLabel.setText("Waiting for Input");
         stage.getScene().setOnKeyPressed(keyEvent -> {
+            // Check if the pressed key is a valid hotkey
             if (keyEvent.getCode() == KeyCode.F1) {
                 startHotKeyLabel.setText("Start HotKey: F1");
             } else {
+                // Set the label text to the pressed key
                 startHotKeyLabel.setText("Start HotKey: " + keyEvent.getCode().getName());
                 HelloApplication.controller.setStartButtonText("Start/" + keyEvent.getCode().getName());
             }
+            // Remove the key press event handler
             stage.getScene().setOnKeyPressed(null);
         });
     }
