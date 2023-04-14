@@ -6,8 +6,6 @@ LostClicker was my first project I did for fun using javafx, and it was a extrem
 
 <img src="https://user-images.githubusercontent.com/113804442/226077186-01bae01e-cd04-4cd1-85d8-43a1e107c092.png" width=400 />
 
-NOTE: Uses quite a bit of memory, around ~120mb every time you're running. Probably not the ideal autoclicker for anyone, but it's fun to experiment with the features
-
 Icons used for this project:
 
 <img src="https://user-images.githubusercontent.com/113804442/224515300-e5683df5-6155-43e0-87ee-7571f015acb6.png" width="200" />
