@@ -1,8 +1,4 @@
 # LostClicker
-To do list
-- Have a working executable file
-
-LostClicker was my first project I did for fun using javafx, and it was a extremely fun project. Feel free to roast my awful code :>
 
 <img src="https://user-images.githubusercontent.com/113804442/226077186-01bae01e-cd04-4cd1-85d8-43a1e107c092.png" width=400 />
 
